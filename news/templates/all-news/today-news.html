@@ -1,5 +1,6 @@
 {%extends 'all-news/base.html'%} {% block content %} {{ block.super}}
 {%load bootstrap3%}
+{% load static %}
 <div class="container" style="background-color:#141e30; color: white" >
     <form  action="{%url 'newsToday'%}" method="post">
         {%csrf_token%}
@@ -32,3 +33,7 @@
 </div>
 
 {% endblock %}
+<!--End of the block content-->
+{% block scripts %} {{block.super}}
+<script type="text/javascript" src="{%satatic 'js/newsletter.js'%}"></script>
+{%endblock%}
